@@ -1,7 +1,5 @@
 require 'rubygems'
-require 'capybara'
-require 'capybara/dsl'
-require "selenium-webdriver"
+require 'mechanize'
 require 'byebug'
 
 USER_AGENTS = [
@@ -22,27 +20,38 @@ USER_AGENTS = [
   "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/49.0.2623.108 Chrome/49.0.2623.108 Safari/537.36"
 ]
 
-Capybara.run_server = false
-Capybara.default_driver = :selenium
+AGENT_ALIASES = [
+  "Linux Mozilla",
+  "Mac Mozilla",
+  "Mac Safari 4"
+]
 
-module CapybaraObject
+module HeadlessConnection
   class VotingService
-    include Capybara::DSL
-    include Selenium
-
     def run_script
-      profile = WebDriver::Firefox::Profile.new
-      profile['general.useragent.override'] = USER_AGENTS.sample
-      driver = WebDriver.for :firefox, :profile => profile
-      driver.navigate.to "http://www.gwinnettprepsports.com/schools/lanier/fans-choice-spring-athlete-of-the-week-candidate-profiles/article_2a32e578-2b2b-11e8-8290-73d2bc868286.html"
-      driver.execute_script("$(\"input[value='C7EA24D5-9340-0001-BDF44A003A604440']\").click()")
-      sleep rand(5..10)
-      driver.execute_script("$('#poll-b2b1ccf4-2b29-11e8-9ae0-4f05da350c50-form').submit()")
-      sleep rand(5..10)
-      driver.quit
+      agent_name  = USER_AGENTS.sample
+      agent_alias = AGENT_ALIASES.sample
+      driver = Mechanize.new { |agent|
+        agent.user_agent_alias = agent_alias
+      }
+
+      driver.user_agent = agent_name
+      driver.get('http://www.gwinnettprepsports.com/schools/lanier/fans-choice-spring-athlete-of-the-week-candidate-profiles/article_2a32e578-2b2b-11e8-8290-73d2bc868286.html') do |page|
+        puts "Page found."
+        sleep rand(5..10)
+        form   = page.form_with(:id => "poll-b2b1ccf4-2b29-11e8-9ae0-4f05da350c50-form")
+        button = form.button_with(:type => "submit")
+        radio  = form.radiobutton_with(:value => "C7EA24D5-9340-0001-BDF44A003A604440")
+        puts "Form / buttons found."
+        radio.check
+        puts "Radio button selected."
+        sleep rand(1..10)
+        driver.submit(form, button)
+        puts "Form submitted."
+      end
     end
   end
 end
 
-t = CapybaraObject::VotingService.new
+t = HeadlessConnection::VotingService.new
 t.run_script
