@@ -1,0 +1,349 @@
+.block {
+  display: block !important;
+}
+
+.no-float {
+  float: none !important;
+}
+
+.cursor-pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.large-line-height {
+  line-height: 45px;
+}
+
+.medium-font {
+  font-weight: 600;
+}
+
+.hidden,
+.hide {
+  display: none !important;
+}
+
+textarea.no-resize {
+  resize: none;
+}
+
+a.disabled {
+  pointer-events: hover !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-margin {
+  margin: 0px !important;
+}
+
+.margin-center {
+  margin: 0 auto !important;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.bottom-margin {
+  margin-bottom: 25px !important;
+}
+
+.left-margin-sm {
+  margin-left: 15px !important;
+}
+
+.left-margin-xs {
+  margin-left: 10px !important;
+}
+
+.left-margin-md {
+  margin-left: 25px !important;
+}
+
+.left-margin-lg {
+  margin-left: 33px !important;
+}
+
+.right-margin-sm {
+  margin-right: 15px !important;
+}
+
+.right-margin-xs {
+  margin-right: 10px !important;
+}
+
+.right-margin-md {
+  margin-right: 25px !important;
+}
+
+.right-margin-lg {
+  margin-right: 33px !important;
+}
+
+.top-margin-md {
+  margin-top: 25px !important;
+}
+
+.top-margin-lg {
+  margin-top: 33px !important;
+}
+
+.bottom-margin-sm {
+  margin-bottom: 15px !important;
+}
+
+.bottom-margin-xs {
+  margin-bottom: 10px !important;
+}
+
+.bottom-margin-md {
+  margin-bottom: 25px !important;
+}
+
+.bottom-margin-lg {
+  margin-bottom: 33px !important;
+}
+
+.top-margin-sm {
+  margin-top: 15px !important;
+}
+
+.top-margin-xs {
+  margin-top: 10px !important;
+}
+
+.left-padding-sm {
+  padding-left: 15px !important;
+}
+
+.left-padding-xs {
+  padding-left: 10px !important;
+}
+
+.left-padding-md {
+  padding-left: 25px !important;
+}
+
+.left-padding-lg {
+  padding-left: 33px !important;
+}
+
+.right-padding-sm {
+  padding-right: 15px !important;
+}
+
+.right-padding-xs {
+  padding-right: 10px !important;
+}
+
+.right-padding-md {
+  padding-right: 25px !important;
+}
+
+.right-padding-lg {
+  padding-right: 33px !important;
+}
+
+.top-padding-md {
+  padding-top: 25px !important;
+}
+
+.top-padding-lg {
+  padding-top: 33px !important;
+}
+
+.bottom-padding-sm {
+  padding-bottom: 15px !important;
+}
+
+.bottom-padding-xs {
+  padding-bottom: 10px !important;
+}
+
+.bottom-padding-md {
+  padding-bottom: 25px !important;
+}
+
+.bottom-padding-lg {
+  padding-bottom: 33px !important;
+}
+
+.top-padding-sm {
+  padding-top: 15px !important;
+}
+
+.top-padding-xs {
+  padding-top: 10px !important;
+}
+
+.hover-darken {
+  cursor: pointer;
+  transition: 500ms filter;
+  &:hover {
+    filter: brightness(90%);
+  }
+}
+
+.hover-pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ellipsize-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.relative {
+  position: relative;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.max-400 {
+  max-width: 400px;
+}
+
+.max-300 {
+  max-width: 300px;
+}
+
+.max-200 {
+  max-width: 200px !important;
+}
+
+.max-700 {
+  max-width: 700px;
+}
+
+.max-600 {
+  max-width: 600px;
+}
+
+.max-500 {
+  max-width: 500px;
+}
+
+.font-12 {
+  font-size: 12px !important;
+}
+
+.font-13 {
+  font-size: 13px !important;
+}
+
+.font-14 {
+  font-size: 14px !important;
+}
+
+.font-15 {
+  font-size: 15px !important;
+}
+
+.font-16 {
+  font-size: 16px !important;
+}
+
+.font-17 {
+  font-size: 17px !important;
+}
+
+.font-18 {
+  font-size: 18px !important;
+}
+
+.font-19 {
+  font-size: 19px !important;
+}
+
+.font-20 {
+  font-size: 20px !important;
+}
+
+.font-27 {
+  font-size: 27px !important;
+}
+
+.font-30 {
+  font-size: 30px !important;
+}
+
+.nowrap {
+  white-space: nowrap !important;
+}
+
+a.no-style {
+  text-decoration: none;
+  color: inherit;
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.hr-separator {
+  border: 0;
+  border-bottom: 2px solid #e3e3e3;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.light-shadow {
+  box-shadow: 0px 0px 15px #21212114;
+}
+
+.border-5 {
+  border-radius: 5px;
+}
+
+.border-3 {
+  border-radius: 3px;
+}
+
+.border-10 {
+  border-radius: 10px;
+}
+
+.capitalize {
+  text-transform: capitalize !important;
+}
+
+.vertical-middle {
+  vertical-align: middle !important;
+}
+
+.vertical-baseline {
+  vertical-align: baseline !important;
+}
+
+.vertical-bottom {
+  vertical-align: bottom;
+}
+
+.vertical-separator {
+  height: 40px;
+  width: 0;
+  border: 0;
+  margin: 0 auto;
+  border-right: 2px solid #d3d3d3;
+  margin-right: 2px;
+}
+
+
