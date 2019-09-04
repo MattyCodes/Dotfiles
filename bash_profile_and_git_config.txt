@@ -8,8 +8,8 @@ alias crush="git branch -d "
 alias atom="open -a Atom"
 alias gs="git status"
 alias co="git checkout"
-alias migrate_all="bin/rails db:migrate RAILS_ENV=test; rails db:migrate RAILS_ENV=development"
-alias drop_all="git stash; git stash drop"
+alias migrate-all="bin/rails db:migrate RAILS_ENV=test; rails db:migrate RAILS_ENV=development"
+alias drop-all="git stash; git stash drop"
 
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
