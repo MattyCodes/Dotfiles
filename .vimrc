@@ -19,6 +19,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline' 
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jlanzarotta/bufexplorer'
 
@@ -33,6 +34,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let NERDTreeShowHidden=1
 nmap <F5> :NERDTreeToggle<CR>
 syntax enable
+
+" Configuration for color-column.
+:set colorcolumn=81
+
+" Convert tabs to spaces.
+:set expandtab
 
 " Solarized VIM.
 let g:solarized_termcolors=256
