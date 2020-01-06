@@ -18,14 +18,19 @@ Plugin 'groenewege/vim-less'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline' 
+Plugin 'bling/vim-airline'
+Plugin 'junegunn/fzf.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jlanzarotta/bufexplorer'
 
 " End Vundle configuration.
 call vundle#end()         
 filetype plugin indent on
+
+" Inclusion of FZF (fuzzy searching).
+set rtp+=/usr/local/opt/fzf
 
 " NERDTree configuration.
 autocmd StdinReadPre * let s:std_in=1
@@ -45,6 +50,9 @@ syntax enable
 let g:solarized_termcolors=256
 set background=light
 colorscheme solarized
+
+" Keymapping for commenting code.
+map <C-/> :TComment
 
 " Keymapping for ctrlp.vim (fuzzy file search).
 let g:ctrlp_map='<c-p>'
