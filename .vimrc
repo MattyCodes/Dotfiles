@@ -20,8 +20,8 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
-Plugin 'dkprice/vim-easygrep'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'mileszs/ack.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jlanzarotta/bufexplorer'
 
@@ -35,10 +35,12 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeShowHidden=1
 nmap <F5> :NERDTreeToggle<CR>
-syntax enable
 
 " Configuration for color-column.
 :set colorcolumn=81
+
+" Do not wrap lines.
+set nowrap
 
 " Keymapping for the code commenting plugin.
 map <C-/> :TComment
@@ -46,9 +48,17 @@ map <C-/> :TComment
 " Convert tabs to spaces.
 :set expandtab
 
-" Solarized VIM.
-let g:solarized_termcolors=256
-set background=light
+" Enable syntax highlighting.
+syntax enable
+
+" Solarized light theme.
+" let g:solarized_termcolors=256
+" set background=light
+
+"Solarized dark theme.
+set background=dark
+
+" Turn on solarized VIM.
 colorscheme solarized
 
 " Keymapping for ctrlp.vim (fuzzy file search).
