@@ -1,7 +1,8 @@
 alias reload="source ~/.bash_profile"
-alias d="cd desktop/"
+alias d="cd; cd desktop/"
 alias commit="git add .; git commit -m"
 alias kill-branch="git branch -d "
+alias g="git"
 alias gs="git status"
 alias co="git checkout"
 
@@ -13,4 +14,6 @@ d_name() {
   echo -e "${PWD##*/}"
 }
 
-export PS1=' == \[\e[92m\]$(d_name)\[\e[96m\]$(parse_git_branch) \[\e[97m\]>> '
+export TERM='xterm-256color'
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export PS1=' \[\e[97m\]== \[\e[32m\]$(d_name)\[\e[96m\]$(parse_git_branch) \[\e[97m\]>> '
