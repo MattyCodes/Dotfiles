@@ -44,8 +44,8 @@ nmap <F5> :NERDTreeToggle<CR>
 
 " Do not wrap lines.
 set nowrap
+set formatoptions-=t
 
-" Keymapping for the code commenting plugin.
 map <C-/> :TComment
 
 " Convert tabs to spaces.
@@ -90,10 +90,8 @@ let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=50
 let g:ctrlp_match_window = 'min:4,max:999'
 
-" General setup and configuration for plugins.
+" General setup and configuration for VIM.
 set number 
-set linebreak 
-set showbreak=+++ 
 set textwidth=100
 set showmatch 
 set visualbell 
