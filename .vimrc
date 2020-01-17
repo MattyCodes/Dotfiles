@@ -36,7 +36,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let NERDTreeShowHidden=1
 nmap <F5> :NERDTreeToggle<CR>
 
-" Uncomment the line below to have NERDTree open by default.
+" Open the tree-view when VIM is launched.
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Configuration for color-column.
@@ -57,13 +57,27 @@ syntax enable
 " Enable 256 terminal colors.
 let g:solarized_termcolors=256
 
-" Enable color scheme.
+" Autumnal, earthy theme.
+" colorscheme happy_hacking
+
+" A dark, colorful theme with lots of Purples and Blues.
 colorscheme afterglow
+
+" A theme that resembles Macho Man Randy Savage.
+" colorscheme abstract
+
+" A very dim, Woodlan/Earth theme.
+" colorscheme alduin
+
+" A bright, Crayola-type theme.
+" colorscheme OceanicNext
 
 " Solarized light theme.
 " set background=light
 
-" Solarized dark theme (Disable 256 terminal colors for this to work properly).
+" Solarized dark theme. 
+" For this theme to work, the Terminal background has to be the dark solarized color, 
+" and the 256 terminal colors must be disabled.
 " set background=dark
 
 " Turn on solarized VIM.
