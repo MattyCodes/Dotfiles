@@ -22,6 +22,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'rafi/awesome-vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jlanzarotta/bufexplorer'
 
@@ -31,10 +32,12 @@ filetype plugin indent on
 
 " NERDTree configuration.
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeShowHidden=1
 nmap <F5> :NERDTreeToggle<CR>
+
+" Uncomment the line below to have NERDTree open by default.
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Configuration for color-column.
 :set colorcolumn=81
@@ -51,15 +54,20 @@ map <C-/> :TComment
 " Enable syntax highlighting.
 syntax enable
 
+" Enable 256 terminal colors.
+let g:solarized_termcolors=256
+
+" Enable color scheme.
+colorscheme afterglow
+
 " Solarized light theme.
-" let g:solarized_termcolors=256
 " set background=light
 
-"Solarized dark theme.
-set background=dark
+" Solarized dark theme (Disable 256 terminal colors for this to work properly).
+" set background=dark
 
 " Turn on solarized VIM.
-colorscheme solarized
+" colorscheme solarized
 
 " Keymapping for ctrlp.vim (fuzzy file search).
 let g:ctrlp_map='<c-p>'
