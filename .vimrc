@@ -16,12 +16,14 @@ Plugin 'skammer/vim-css-color'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'posva/vim-vue'
 Plugin 'rafi/awesome-vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jlanzarotta/bufexplorer'
@@ -35,6 +37,9 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeShowHidden=1
 nmap <F5> :NERDTreeToggle<CR>
+
+" Configuration for the Vue.js package.
+let g:vue_pre_processors = ['scss']
 
 " Open the tree-view when VIM is launched.
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -57,16 +62,13 @@ syntax enable
 " Enable 256 terminal colors.
 let g:solarized_termcolors=256
 
-" Autumnal, earthy theme.
-" colorscheme happy_hacking
-
 " A dark, colorful theme with lots of Purples and Blues.
 colorscheme afterglow
 
 " A theme that resembles Macho Man Randy Savage.
 " colorscheme abstract
 
-" A very dim, Woodlan/Earth theme.
+" A very dim, Woodland/Earth theme.
 " colorscheme alduin
 
 " A bright, Crayola-type theme.
@@ -88,7 +90,8 @@ let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlP'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=50
-let g:ctrlp_match_window = 'min:4,max:999'
+let g:ctrlp_match_window='min:4,max:999'
+let g:ctrlp_user_command=['.git', 'cd %s && git ls-files']
 
 " General setup and configuration for VIM.
 set number 
