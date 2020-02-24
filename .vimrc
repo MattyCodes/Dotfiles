@@ -19,7 +19,6 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'mileszs/ack.vim'
@@ -60,10 +59,10 @@ map <C-/> :TComment
 syntax enable
 
 " Enable 256 terminal colors.
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 
 " A dark, colorful theme with lots of Purples and Blues.
-colorscheme afterglow
+" colorscheme afterglow
 
 " A theme that resembles Macho Man Randy Savage.
 " colorscheme abstract
@@ -74,16 +73,14 @@ colorscheme afterglow
 " A bright, Crayola-type theme.
 " colorscheme OceanicNext
 
-" Solarized light theme.
+" Light theme.
 " set background=light
 
-" Solarized dark theme. 
-" For this theme to work, the Terminal background has to be the dark solarized color, 
-" and the 256 terminal colors must be disabled.
-" set background=dark
+" Dark theme (disable the 256 solarized-termcolors for this to work). 
+set background=dark
 
-" Turn on solarized VIM.
-" colorscheme solarized
+" Solarized syntax theme.
+colorscheme solarized
 
 " Keymapping for ctrlp.vim (fuzzy file search).
 let g:ctrlp_map='<c-p>'
@@ -127,17 +124,4 @@ map <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 set pastetoggle=<F10>
 inoremap <C-v> <F10><C-r>+<F10>
-
-" Syntastic configuration.
-let g:gitgutter_updatetime = 750
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ? ['jshint'] : ['standard']
 set statusline+=%F
