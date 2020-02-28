@@ -15,6 +15,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'skammer/vim-css-color'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
+Plugin 'arzg/vim-colors-xcode'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'cakebaker/scss-syntax.vim'
@@ -64,14 +65,11 @@ syntax enable
 " A dark, colorful theme with lots of Purples and Blues.
 " colorscheme afterglow
 
-" A theme that resembles Macho Man Randy Savage.
-" colorscheme abstract
-
 " A very dim, Woodland/Earth theme.
 " colorscheme alduin
 
-" A bright, Crayola-type theme.
-" colorscheme OceanicNext
+" Colorscheme for the Xcode theme.
+" colorscheme xcodedark
 
 " Light theme.
 " set background=light
