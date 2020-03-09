@@ -60,10 +60,10 @@ map <C-/> :TComment
 syntax enable
 
 " Enable 256 terminal colors.
-" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 
 " A dark, colorful theme with lots of Purples and Blues.
-" colorscheme afterglow
+colorscheme afterglow
 
 " A very dim, Woodland/Earth theme.
 " colorscheme alduin
@@ -78,7 +78,7 @@ syntax enable
 set background=dark
 
 " Solarized syntax theme.
-colorscheme solarized
+" colorscheme solarized
 
 " Keymapping for ctrlp.vim (fuzzy file search).
 let g:ctrlp_map='<c-p>'
