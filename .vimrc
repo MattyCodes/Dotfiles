@@ -65,6 +65,9 @@ let g:solarized_termcolors=256
 " A dark, colorful theme with lots of Purples and Blues.
 colorscheme afterglow
 
+" A woodsy theme with lots of greens and dull colors.
+" colorscheme happy_hacking
+
 " A very dim, Woodland/Earth theme.
 " colorscheme alduin
 
