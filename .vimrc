@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'        
 Plugin 'skammer/vim-css-color'
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'arzg/vim-colors-xcode'
@@ -63,7 +64,9 @@ syntax enable
 let g:solarized_termcolors=256
 
 " A dark, colorful theme with lots of Purples and Blues.
-colorscheme afterglow
+" colorscheme afterglow
+
+colorscheme nord
 
 " A very dim, Woodland/Earth theme.
 " colorscheme alduin
