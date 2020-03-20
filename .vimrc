@@ -68,6 +68,9 @@ let g:solarized_termcolors=256
 
 colorscheme nord
 
+" A woodsy theme with lots of greens and dull colors.
+" colorscheme happy_hacking
+
 " A very dim, Woodland/Earth theme.
 " colorscheme alduin
 
