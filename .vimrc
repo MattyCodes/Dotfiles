@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'        
 Plugin 'skammer/vim-css-color'
+Plugin 'morhetz/gruvbox'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
@@ -60,9 +61,6 @@ map <C-/> :TComment
 " Enable syntax highlighting.
 syntax enable
 
-" Enable 256 terminal colors.
-" let g:solarized_termcolors=256
-
 " A dark, colorful theme with lots of Purples and Blues.
 " colorscheme afterglow
 
@@ -80,11 +78,14 @@ syntax enable
 " Light theme.
 set background=light
 
-" Dark theme (disable the 256 solarized-termcolors for this to work). 
+" Dark theme
 " set background=dark
 
 " Solarized syntax theme.
 colorscheme solarized
+
+" Gruvbox syntax theme.
+" autocmd vimenter * colorscheme gruvbox
 
 " Keymapping for ctrlp.vim (fuzzy file search).
 let g:ctrlp_map='<c-p>'
