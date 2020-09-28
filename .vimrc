@@ -2,7 +2,7 @@
 set nocompatible
 filetype off
 
-" Initialization for Vundle.
+" Initialization for Vundle and its plugins.
 set rtp+=~/.vim/bundle/Vundle.vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*
@@ -43,59 +43,12 @@ nmap <F5> :NERDTreeToggle<CR>
 " Configuration for the Vue.js package.
 let g:vue_pre_processors = ['scss']
 
-" Open the tree-view when VIM is launched.
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Configuration for color-column.
+" Various definitions.
 :set colorcolumn=81
-
-" Do not wrap lines.
 set nowrap
 set formatoptions-=t
-
 map <C-/> :TComment
-
-" Convert tabs to spaces.
 :set expandtab
-
-" Enable syntax highlighting.
-syntax enable
-
-" A dark, colorful theme with lots of Purples and Blues.
-" colorscheme afterglow
-
-" colorscheme nord
-
-" A woodsy theme with lots of greens and dull colors.
-" colorscheme happy_hacking
-
-" A very dim, Woodland/Earth theme.
-" colorscheme alduin
-
-" Colorscheme for the Xcode theme.
-" colorscheme xcodedark
-
-" Light theme.
-set background=light
-
-" Dark theme
-" set background=dark
-
-" Solarized syntax theme.
-colorscheme solarized
-
-" Gruvbox syntax theme.
-" autocmd vimenter * colorscheme gruvbox
-
-" Keymapping for ctrlp.vim (fuzzy file search).
-let g:ctrlp_map='<c-p>'
-let g:ctrlp_cmd='CtrlP'
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=50
-let g:ctrlp_match_window='min:4,max:999'
-let g:ctrlp_user_command=['.git', 'cd %s && git ls-files']
-
-" General setup and configuration for VIM.
 set number 
 set textwidth=100
 set showmatch 
@@ -114,6 +67,25 @@ set undolevels=1000
 set backspace=indent,eol,start  
 set mouse=a
 set guifont=Menlo\ Regular:h14
+set statusline+=%F
+set background=light
+
+" Enable syntax highlighting.
+syntax enable
+
+" Solarized syntax theme.
+colorscheme solarized
+
+" Gruvbox syntax theme.
+" autocmd vimenter * colorscheme gruvbox
+
+" Keymapping for ctrlp.vim (fuzzy file search).
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd='CtrlP'
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=50
+let g:ctrlp_match_window='min:4,max:999'
+let g:ctrlp_user_command=['.git', 'cd %s && git ls-files']
 
 " Mapped shortcuts for switching tabs and panes.
 noremap <C-Tab> :tabnext<CR>
@@ -129,4 +101,3 @@ map <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 set pastetoggle=<F10>
 inoremap <C-v> <F10><C-r>+<F10>
-set statusline+=%F
