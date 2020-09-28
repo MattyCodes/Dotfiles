@@ -3,8 +3,8 @@ set nocompatible
 filetype off
 
 " Initialization for Vundle and its plugins.
-set rtp+=~/.vim/bundle/Vundle.vim
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+set runtimepath^=~/.config/nvim/bundle/ctrlp.vim
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*
 call vundle#begin()
 
@@ -68,16 +68,16 @@ set backspace=indent,eol,start
 set mouse=a
 set guifont=Menlo\ Regular:h14
 set statusline+=%F
-set background=light
+set background=dark
 
 " Enable syntax highlighting.
 syntax enable
 
 " Solarized syntax theme.
-colorscheme solarized
+" colorscheme solarized
 
 " Gruvbox syntax theme.
-" autocmd vimenter * colorscheme gruvbox
+autocmd vimenter * colorscheme gruvbox
 
 " Keymapping for ctrlp.vim (fuzzy file search).
 let g:ctrlp_map='<c-p>'
