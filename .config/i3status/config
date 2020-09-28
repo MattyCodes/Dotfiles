@@ -1,0 +1,17 @@
+general {
+        output_format = "i3bar"
+        markup = pango
+	colors = false
+	interval = 1
+}
+
+order += "cpu_usage"
+order += "tztime local"
+
+cpu_usage {
+	format = "%usage "
+}
+
+tztime local {
+	format = " %h-%d %H:%M"
+}
