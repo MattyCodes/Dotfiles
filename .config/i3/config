@@ -12,25 +12,28 @@ set $ws10 "10"
 
 ##### DEFINITIONS #####
 set $mod Mod4
-set $refresh_i3status killall -SIGUSR1 i3status
+# set $refresh_i3status killall -SIGUSR1 i3status
 font pango:monospace 8
 floating_modifier $mod
+for_window [class=".*"] border pixel 0
+smart_borders on
+gaps inner 20
+gaps outer 5
 
 ##### SCRIPTS #####
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 ##### AUDIO CONTROLS #####
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
 
 ##### BRIGHTNESS CONTROLS #####
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec ~/Scripts/increase_brightness
+bindsym XF86MonBrightnessDown exec ~/Scripts/decrease_brightness
 
 ##### BINDINGS #####
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+h move left
@@ -65,7 +68,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-##### WORKSPACE BAR #####
+#### WORKSPACE BAR #####
 bar {
 	status_command i3status
         position top
@@ -79,3 +82,7 @@ client.unfocused        #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent           #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.placeholder      #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.background       #2f343f
+
+##### STARTUP SCRIPTS #####
+exec --no-startup-id pulseaudio --start
+exec_always --no-startup-id pkill picom; picom --experimental-backends --no-use-damage --backend glx
