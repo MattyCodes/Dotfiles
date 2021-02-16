@@ -43,6 +43,9 @@ nmap <F5> :NERDTreeToggle<CR>
 " Configuration for the Vue.js package.
 let g:vue_pre_processors = ['scss']
 
+" Limit the color palette for Gruvbox; without this the light theme is a weird shade of yellow.
+let g:gruvbox_termcolors=16
+
 " Various definitions.
 :set colorcolumn=81
 set nowrap
@@ -68,7 +71,6 @@ set backspace=indent,eol,start
 set mouse=a
 set guifont=Menlo\ Regular:h14
 set statusline+=%F
-set background=dark
 
 " Enable syntax highlighting.
 syntax enable
@@ -101,3 +103,6 @@ map <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 set pastetoggle=<F10>
 inoremap <C-v> <F10><C-r>+<F10>
+
+" Configure the background (this line must be the last in the file).
+set background=dark

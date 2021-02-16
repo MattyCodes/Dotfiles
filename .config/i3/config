@@ -34,6 +34,7 @@ bindsym XF86MonBrightnessDown exec ~/Scripts/decrease_brightness
 
 ##### BINDINGS #####
 bindsym $mod+Return exec kitty
+bindsym $mod+b exec firefox
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+h move left
@@ -86,3 +87,5 @@ client.background       #2f343f
 ##### STARTUP SCRIPTS #####
 exec --no-startup-id pulseaudio --start
 exec_always --no-startup-id pkill picom; picom --experimental-backends --no-use-damage --backend glx
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id nm-applet
