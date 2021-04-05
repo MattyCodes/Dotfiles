@@ -1,0 +1,189 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background                      = #282828
+background-alt                  = #3C3836
+foreground                      = #EBDBB2
+foreground-alt                  = #EBDBB2
+primary                         = #D79921
+secondary                       = #689D6A
+alert                           = #FB4934
+lightbg                         = #EBDBB2
+
+[bar/primary]
+width        = 100%
+height       = 35
+radius       = 0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size  = 3
+line-color = #EBDBB2
+
+border-size  = 0
+border-color = #000000
+
+padding-left  = 0
+padding-right = 2
+
+module-margin-left  = 5
+module-margin-right = 5
+
+font-0 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-2 = "Font Awesome 5 Brands:pixelsize=10;1"
+
+modules-left   = i3
+modules-center = date
+modules-right  = pulseaudio wlan battery
+
+tray-position = right
+tray-padding  = 2
+
+cursor-click  = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+
+[module/i3]
+type            = internal/i3
+format          = <label-state> <label-mode>
+index-sort      = true
+wrapping-scroll = false
+
+label-mode-padding    = 2
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.primary}
+
+label-focused            = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline  = ${colors.secondary}
+label-focused-padding    = 2
+
+label-unfocused         = %index%
+label-unfocused-padding = 2
+
+label-visible            = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline  = ${self.label-focused-underline}
+label-visible-padding    = ${self.label-focused-padding}
+
+label-urgent            = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding    = 2
+
+[module/wlan]
+type      = internal/network
+interface = wlp0s20f3
+interval  = 3.0
+
+; Use this line to display the network that is currently connected.
+; format-connected = <ramp-signal> <label-connected>
+
+format-connected           =
+format-connected-underline = ${colors.primary}
+label-connected            = %essid%
+format-disconnected        =
+
+; Provide proper values to display symbols for this module.
+; ramp-signal-0 = 
+; ramp-signal-1 = 
+; ramp-signal-2 = 
+; ramp-signal-3 = 
+; ramp-signal-4 = 
+; ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/date]
+type     = internal/date
+interval = 5
+
+date     =
+date-alt = "%m/%d/%Y"
+
+time     = %I:%M %p
+time-alt = %I:%M %p
+
+format-prefix            =
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline         = ${colors.primary}
+
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume           = <label-volume> <bar-volume>
+label-volume            = VOL %percentage%%
+label-volume-foreground = ${root.foreground}
+
+; Functionality does not currently work.
+; label-muted = 🔇 muted
+; label-muted-foreground = #666
+
+bar-volume-width            = 7
+bar-volume-foreground-0     = ${colors.secondary}
+bar-volume-foreground-1     = ${colors.secondary}
+bar-volume-foreground-2     = ${colors.secondary}
+bar-volume-foreground-3     = ${colors.secondary}
+bar-volume-foreground-4     = ${colors.secondary}
+bar-volume-foreground-5     = ${colors.secondary}
+bar-volume-foreground-6     = ${colors.secondary}
+bar-volume-gradient         = false
+bar-volume-indicator        = |
+bar-volume-indicator-font   = 2
+bar-volume-fill             = ─
+bar-volume-fill-font        = 2
+bar-volume-empty            = ─
+bar-volume-empty-font       = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type    = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+format-charging           = <animation-charging> <label-charging>
+format-charging-underline = ${colors.primary}
+
+format-discharging           = <animation-discharging> <label-discharging>
+format-discharging-underline = ${colors.primary}
+
+format-full-prefix            =
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline         = ${colors.secondary}
+
+ramp-capacity-0          = |
+ramp-capacity-1          = <
+ramp-capacity-2          = >
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0          =
+animation-charging-1          =
+animation-charging-2          =
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate  = 750
+
+animation-discharging-0          =
+animation-discharging-1          =
+animation-discharging-2          =
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate  = 750
