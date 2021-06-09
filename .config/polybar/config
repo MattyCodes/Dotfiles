@@ -17,14 +17,14 @@
 ;==========================================================
 
 [colors]
-background                      = #282828
-background-alt                  = #3C3836
-foreground                      = #EBDBB2
-foreground-alt                  = #EBDBB2
-primary                         = #D79921
-secondary                       = #689D6A
+background                      = #2E3440
+background-alt                  = #3B4252
+foreground                      = #D8DEE9
+foreground-alt                  = #3B4252
+primary                         = #8FBCBB
+secondary                       = #88C0D0
 alert                           = #FB4934
-lightbg                         = #EBDBB2
+lightbg                         = #3B4252
 
 [bar/primary]
 width        = 100%
