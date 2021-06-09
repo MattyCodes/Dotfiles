@@ -1,0 +1,2 @@
+rofi.theme: ~/.config/rofi/nord.rasi
+rofi.width: 33;

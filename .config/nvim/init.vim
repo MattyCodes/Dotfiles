@@ -79,7 +79,10 @@ syntax enable
 " colorscheme solarized
 
 " Gruvbox syntax theme.
-autocmd vimenter * colorscheme gruvbox
+" autocmd vimenter * colorscheme gruvbox
+
+" Nord syntax theme.
+colorscheme nord
 
 " Keymapping for ctrlp.vim (fuzzy file search).
 let g:ctrlp_map='<c-p>'
@@ -97,6 +100,9 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
+" Italicize comments in the editor.
+highlight Comment cterm=italic gui=italic
+
 " Allow copy-to-clipboard.
 set clipboard=unnamed
 map <C-x> :!pbcopy<CR>
@@ -105,4 +111,4 @@ set pastetoggle=<F10>
 inoremap <C-v> <F10><C-r>+<F10>
 
 " Configure the background (this line must be the last in the file).
-set background=dark
+set background=light
