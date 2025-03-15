@@ -5,9 +5,11 @@
   branch-name = "!git rev-parse --abbrev-ref HEAD"
   going = "!git push origin $(git branch-name)"
   fucked = "!git stash && git stash drop && git clean -fd"
-  over-here = "!git pull origin $(git branch-name)"
+  over-here = "!git pull origin $(git branch-name) --no-rebase"
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+[core]
+  editor = nvim
